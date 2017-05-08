@@ -1,0 +1,177 @@
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Exo', sans-serif;
+}
+
+body {
+  margin-top: 7.8em;
+  background-color: #373737;
+}
+
+p {
+  margin: 1em 0;
+}
+
+.header {
+  background-color: #373737;
+  color: #f4f4f4;
+  padding: .5em 1em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.logo {
+  width: 2.5em;
+}
+
+.header-title {
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-left: .5em;
+}
+
+.header-subtitle {
+  font-size: .75em; 
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.navbar {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.navbar a {
+  color: #f4f4f4;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: .5em;
+  text-decoration: underline;
+}
+
+.navbar a:last-child {
+  margin: 0;
+}
+
+#remove {
+  transition: all .5s cubic-bezier(0.85,-0.4, 0.24, 0.82);
+}
+
+.remove-active {
+  transform: translateX(100%);
+  font-size: 0em;
+  opacity: 0;
+}
+
+.main-wrapper {
+  color: #5e5e5e;
+  text-align: justify;
+}
+
+.home {
+  padding: 1em;
+  background-color: #F1F1E3;
+}
+
+.section-title {
+  margin-top: 0;
+  text-transform: capitalize;
+  font-size: 1.25em;
+}
+
+.button-wrapper {
+  text-align: center;
+}
+
+.button-call {
+  color: #f1f1e3;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: .5em .75em;
+  text-decoration: none;
+  background-color: #373737;
+  border: .1em solid #373737;
+  border-radius: .5em;
+}
+
+.about {
+  background-color: #f4f4f4;
+  padding: 1em;
+}
+
+.contact {
+  background-color: #f1f1e3;
+  padding: 1em;
+}
+
+.form-row * {
+  font-family: 'Exo', sans-serif;
+  display: block;
+  width: 100%;
+  margin: .5em 0;
+  padding: .5em .5em;
+  border-radius: .5em;
+  border: none;
+}
+
+.form-row *:focus {
+  outline-color: #373737;
+}
+
+.form-button {
+  width: 100%;
+  color: #f1f1e3;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: .5em .75em;
+  text-decoration: none;
+  background-color: #373737;
+  border: .1em solid #373737;
+  border-radius: .5em;
+}
+
+.details {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.details span {
+  display: block;
+  text-transform: uppercase;
+}
+
+.map {
+  width: 100%;
+}
+
+footer {
+  font-size: .75em;
+  padding: .5em;
+  background-color: #373737;
+  color: #f4f4f4;
+}
+
+.logo-footer {
+  width: 2.5em;
+  float: left;
+}
+
+.facebook-logo {
+  float: right;
+  width: 2.5em;
+}
+
+footer::after {
+  content: '';
+  clear: both;
+  display: block;
+}
