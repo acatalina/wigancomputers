@@ -1,16 +1,18 @@
-const removeOnScroll = document.querySelectorAll('#remove');
+var removeOnScroll = document.querySelectorAll('.remove');
 
-window.addEventListener('scroll', (e) => {
+function removeHandler () {
   if (window.scrollY < 300) {
-    removeOnScroll.forEach(elem => {
+    removeOnScroll.forEach(function (elem) {
       elem.classList.remove('remove-active');
     });
   } else {
-    removeOnScroll.forEach(elem => {
+    removeOnScroll.forEach(function (elem) {
       elem.classList.add('remove-active');
     });
   }
-});
+}
+
+window.addEventListener('scroll', removeHandler);
 
 function scrollIt (destination, duration = 200, easing = 'easeInOutQuart', callback) {
   const easings = {
@@ -18,13 +20,13 @@ function scrollIt (destination, duration = 200, easing = 'easeInOutQuart', callb
       return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
     }
   };
-
   const start = window.pageYOffset;
   const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+  var offset = screen.width >= 768 ? 65 : 110;
 
   const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
   const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-  const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop - 85;
+  const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop -  offset;
   const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
 
   if ('requestAnimationFrame' in window === false) {
@@ -54,21 +56,24 @@ function scrollIt (destination, duration = 200, easing = 'easeInOutQuart', callb
   scroll();
 }
 
-document.querySelector('.logo').addEventListener('click', () => scrollIt(0));
+function scrollToTop () {
+  scrollIt(0);
+}
 
-document.querySelector('.about-link').addEventListener('click', () => {
+function scrollToTarget () {
+  var target = this.dataset.target;
+  
   scrollIt(
-    document.querySelector('.about'),
+    document.querySelector(target),
     500,
     'easeInOutQuart'
   );
+}
+
+document.querySelectorAll('.logo').forEach(function (elem) {
+  elem.addEventListener('click', scrollToTop);
 });
 
-document.querySelector('.contact-link').addEventListener('click', () => {
-  scrollIt(
-    document.querySelector('.contact'),
-    500,
-    'easeInOutQuart'
-  );
-});
+document.querySelector('.about-link').addEventListener('click', scrollToTarget);
 
+document.querySelector('.contact-link').addEventListener('click', scrollToTarget);
