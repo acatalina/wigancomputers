@@ -1,14 +1,17 @@
 var removeOnScroll = document.querySelectorAll('.remove');
+var logo = document.querySelector('.logo');
 
 function removeHandler () {
   if (window.scrollY < 300) {
     removeOnScroll.forEach(function (elem) {
       elem.classList.remove('remove-active');
     });
+    logo.classList.remove('small');
   } else {
     removeOnScroll.forEach(function (elem) {
       elem.classList.add('remove-active');
     });
+    logo.classList.add('small');
   }
 }
 
