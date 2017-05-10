@@ -1,36 +1,39 @@
 var removeOnScroll = document.querySelectorAll('.remove');
+var logo = document.querySelector('.logo');
 
 function removeHandler () {
   if (window.scrollY < 300) {
     removeOnScroll.forEach(function (elem) {
       elem.classList.remove('remove-active');
     });
+    logo.classList.remove('small');
   } else {
     removeOnScroll.forEach(function (elem) {
       elem.classList.add('remove-active');
     });
+    logo.classList.add('small');
   }
 }
 
 window.addEventListener('scroll', removeHandler);
 
-function scrollIt (destination, duration = 200, easing = 'easeInOutQuart', callback) {
-  const easings = {
-    easeInOutQuart (t) {
+function scrollIt (destination, duration = 200, callback) {
+  function easeInOutQuart (t) {
       return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
-    }
-  };
-  const start = window.pageYOffset;
-  const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+  }
+  
+  var start = window.pageYOffset;
+  var startTime = window.performance.now ? performance.now() : new Date().getTime();
   var offset = screen.width >= 768 ? 65 : 110;
 
-  const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-  const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop -  offset;
-  const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+  var documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+  var destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop -  offset;
+  var destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
 
-  if ('requestAnimationFrame' in window === false) {
+  if (window.requestAnimationFrame === false) {
     window.scroll(0, destinationOffsetToScroll);
+    
     if (callback) {
       callback();
     }
@@ -38,9 +41,10 @@ function scrollIt (destination, duration = 200, easing = 'easeInOutQuart', callb
   }
 
   function scroll () {
-    const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-    const time = Math.min(1, ((now - startTime) / duration));
-    const timeFunction = easings[easing](time);
+    var now = window.performance.now ? performance.now() : new Date().getTime();
+    var time = Math.min(1, ((now - startTime) / duration));
+    var timeFunction = easeInOutQuart(time);
+
     window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
 
     if (window.pageYOffset === destinationOffsetToScroll) {
@@ -65,8 +69,7 @@ function scrollToTarget () {
   
   scrollIt(
     document.querySelector(target),
-    500,
-    'easeInOutQuart'
+    500
   );
 }
 

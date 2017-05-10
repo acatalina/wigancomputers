@@ -9,7 +9,7 @@ html {
 *::after {box-sizing: border-box;}
 
 body {
-  margin-top: 10em;
+  margin-top: 11.1em;
   background-color: #373737;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -59,7 +59,7 @@ p {display:inline-block;margin: 1em 0;}
 }
 
 .header-title {
-  font-size: 1.25em;
+  font-size: 1.5em;
   margin-left: .5em;
 }
 
@@ -69,8 +69,9 @@ p {display:inline-block;margin: 1em 0;}
 }
 
 .logo {
-  width: 2.5em;
+  width: 3.5em;
   cursor: pointer;
+  transition: all .5s cubic-bezier(0.85,-0.4, 0.24, 0.82);
 }
 
 .navbar {
@@ -184,7 +185,7 @@ footer {
     align-items: center;
   }
 
-.logo-footer {width: 2.5em;}
+.small {width: 2.5em;}
 
 .facebook-logo {
   width: 2.5em;
