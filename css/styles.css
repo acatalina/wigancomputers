@@ -1,12 +1,12 @@
+*, 
+*::before,
+*::after {box-sizing: border-box;}
+
 html {
   box-sizing: border-box;
   color: #5e5e5e;
   min-width: 320px;
 }
-
-*, 
-*::before,
-*::after {box-sizing: border-box;}
 
 body {
   margin-top: 11.1em;
@@ -113,7 +113,6 @@ ul {
 li:before {content: '✓';}
 
 li {margin: 1em 0;}
-
 
 .button-wrapper {
   text-align: center;
