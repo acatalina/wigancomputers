@@ -1,0 +1,11 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
+    <title>Wigan Computers</title>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/{{ if .Site.Params.cacheBustCSS }}{{ index .Site.Data.cachedAssets "main.css " }}{{ else }}normalize.css{{ end }}" type="text/css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/{{ if .Site.Params.cacheBustCSS }}{{ index .Site.Data.cachedAssets "main.css" }}{{ else }}main.css{{ end }}" type="text/css">
+</head>

@@ -1,0 +1,18 @@
+{{ if .IsHome }}
+<header class="header">
+  <div class="container cols-2m">
+    <div class="header-left">
+      <div class="logo-wrapper">
+        <img class="logo" src="imgs/logo.svg" alt="{{ .Site.Params.title }}">
+        <h1 class="header-title remove">{{ .Site.Params.title }}</h1>
+      </div>
+        <h2 class="header-sub remove">{{ .Site.Params.subtitle }}</h2>
+    </div>
+    <nav class="navbar">
+      <a class="about-link" data-target="#about">About</a>
+      <a class="contact-link" data-target="#contact">Contact</a>
+      <a href="https://login.microsoftonline.com/8e4535d4-90fb-4189-8668-312a4b54c85c/oauth2/authorize?client_id=00000003-0000-0ff1-ce00-000000000000&response_mode=form_post&response_type=code%20id_token&scope=openid&nonce=A0F6168A27CC02BF6340B1A91F4372CEDD90FBC620EC5F58-4971D293E393C98FE5A44D73C482A41E80B388C284B0ADD78B7163632564D384&redirect_uri=https:%2F%2Fwigancomputers.sharepoint.com%2F_forms%2Fdefault.aspx&state=0&client-request-id=26aeef9d-e027-3000-ea37-d8cf418318fb">Members</a>
+    </nav>
+  </div>
+</header>
+{{ end }}

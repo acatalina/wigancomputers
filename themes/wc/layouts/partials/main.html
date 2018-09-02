@@ -1,0 +1,40 @@
+ {{ partial "info.html" . }}
+
+{{ partial "about.html" . }}
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <article class="cols-2m">
+      <form action="https://formspree.io/{{ .Site.Params.email }}" method="POST">
+        <div class="form-row">
+          <label for="name">Name:</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email:</label>
+          <input id="email" name="_replyto" type="text" required>
+        </div>
+        <div class="form-row">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" cols="30" rows="10" required></textarea>
+        </div>
+        <div class="form-submit">
+          <button class="button" type="submit">Send</button>
+        </div>
+      </form>
+      <div class="details-wrapper">
+        <div class="details">
+          <span>{{ .Site.Params.title }}</span>
+          <span>{{ .Site.Params.address }}</span>
+          <span>{{ .Site.Params.city }}</span>
+          <span>{{ .Site.Params.postcode }}</span>
+          <span>{{ .Site.Params.telephone }}</span>
+          <span>{{ .Site.Params.email }}</span>
+          <iframe class="map" src="{{ .Site.Params.map }}"
+            frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

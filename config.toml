@@ -1,0 +1,15 @@
+baseURL = "http://example.org/"
+languageCode = "en-uk"
+title = "My New Hugo Site"
+theme = "wc"
+
+[Params]
+  title = "Wigan Computers"
+  subtitle = "Laptop and PC sales, repairs, upgrades and virus removal"
+  telephone = "01942 244969"
+  address = "96 Standishgate"
+  city = "Wigan"
+  postcode = "WN1 1xa"
+  email = "sales@wigancomputers.co.uk"
+  facebook = "https://www.facebook.com/WiganComputers"
+  map = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4740.895329964548!2d-2.632770310631189!3d53.549775699999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b0f7194dc0323%3A0x64b522f3e415464e!2sWigan+Computers!5e0!3m2!1sen!2suk!4v1494251924770"

@@ -1,0 +1,21 @@
+{{ $directory := "content/" }}
+{{ $filename := "info.md" }}
+{{ if (where (readDir $directory) "Name" $filename) }}
+<section>
+  <div class="container">
+    <h2>{{ with $.Site.GetPage "page" "info.md" }}{{ .Title }}{{ end }}</h2>
+    <article class="cols-2m">
+      <div>
+        {{ with $.Site.GetPage "page" "info.md" }}
+          {{ .Content }}
+        {{ end }}
+      </div>
+      <div class="button-wrapper">
+        <a class="button" href="tel:{{ .Site.Params.telephone }}">
+          Call us now on {{ .Site.Params.telephone }}
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+{{ end }}
