@@ -6,6 +6,6 @@
     <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
     <title>Wigan Computers</title>
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/{{ if .Site.Params.cacheBustCSS }}{{ index .Site.Data.cachedAssets "main.css " }}{{ else }}normalize.css{{ end }}" type="text/css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/{{ if .Site.Params.cacheBustCSS }}{{ index .Site.Data.cachedAssets "main.css" }}{{ else }}main.css{{ end }}" type="text/css">
+    <link rel="stylesheet" href="css/{{ if .Site.Params.cacheBustCSS }}{{ index .Site.Data.cachedAssets "normalize.css " }}{{ else }}normalize.css{{ end }}" type="text/css">
+    <link rel="stylesheet" href="css/{{ if .Site.Params.cacheBustCSS }}{{ index .Site.Data.cachedAssets "main.css" }}{{ else }}main.css{{ end }}" type="text/css">
 </head>
