@@ -6,6 +6,7 @@ theme = "wc"
 [Params]
   title = "Wigan Computers"
   subtitle = "Laptop and PC sales, repairs, upgrades and virus removal"
+  logo = "/images/logo.svg"
   telephone = "01942 244969"
   address = "96 Standishgate"
   city = "Wigan"
